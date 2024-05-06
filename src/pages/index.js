@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, Script, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -68,7 +68,11 @@ export default BlogIndex
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="All posts" />
+export const Head = () => {
+  return (
+    <><Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" /><Seo title="All posts" /></>
+  )
+}
 
 export const pageQuery = graphql`
   {
